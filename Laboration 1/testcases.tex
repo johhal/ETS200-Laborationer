@@ -2,7 +2,7 @@
 Condition 1: The input must be a positive Integer.
 \begin{itemize}
 	\item EC1. Input is a positive Integer, valid.
-	\item EC2. Input is a negative Integer, invalid.
+	\item EC2. Input is a non-positive Integer, invalid.
 \end{itemize}
 
 Condition 2: The triangle must be equilateral.
@@ -11,9 +11,9 @@ Condition 2: The triangle must be equilateral.
 	\item EC4. All sides are unequal,invalid. 
 \end{itemize}
 
-Condition 3: 2 sides must be equal.  
+Condition 3: Two sides or more must be equal.  
 \begin{itemize}
-	\item EC5. Two sides are equal, valid. 
+	\item EC5. Two sides or more are equal, valid. 
 	\item EC6. No sides are equal, invalid. 
 \end{itemize}
 
@@ -46,7 +46,23 @@ Condition 5: All sides are unequal.
     \end{tabular}
 \end{table}
 
-
+\begin{table}
+    \begin{tabular}{|l|l|l|l|}
+        \hline
+        Test case identifier & Input values & Valid EC      & Invalid EC         \\ \hline
+        1                    & 3,4,5        & EC1, EC7, EC9 & EC4, EC6           \\ 
+        2                    & 0,0,0        & EC3, EC5      & EC2, EC8, EC10     \\ 
+        3                    & 1,1,1        & EC1, EC3, EC5 & EC8, EC10          \\ 
+        4                    & -1,-2,3      & EC9           & EC2, EC4, EC6, EC8 \\ 
+        5                    & -1,-1,-1     & EC3, EC5      & EC2, EC8, EC10     \\ 
+        6                    & 1,2,3        & EC1, EC9      & EC4, EC6, EC8      \\ 
+        7                    & 0,1,1        & EC5           & EC2, EC8, EC10     \\ 
+        8                    & -3,-4,-5     & EC9           & EC2, EC4, EC6, EC8 \\ 
+        9                    & 2,4,4        & EC1, EC5      & EC8, EC10          \\ 
+        10                   & 3,4,6        & EC1, EC9      & EC4, EC6, EC8      \\
+        \hline
+    \end{tabular}
+\end{table}
 
 
 
