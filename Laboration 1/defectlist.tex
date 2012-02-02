@@ -1,9 +1,12 @@
+When performing the test cases described in Table~\ref{testinputtable} above the following defects presented in Table~\ref{defectlis1} and Table~\ref{defectlist2} was found.
+
 \begin{table}[!htb]
 \caption{Table of the defects found, part 1}
+\label{defectlist1}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline  Defect ID & Defect Type   & Location  & Symptoms\\ \hline
 1.A       & Data defect   & Triangle.getPerimeter()  & Returns an int instead of double \\
-1.B       & Code defect   & Triangle.getperimeter()  & Doesn't handle negative numbers  \\
+1.B       & Code defect   & Triangle.getPerimeter()  & Doesn't handle negative numbers  \\
 2.A       & Data defect   & Triangle.isEquilateral() & 0,0,0 shouldn't return true      \\
 2.B       & Data defect   & Triangle.isEquilateral() & -1,-1,-1 shouldn't return true   \\
 3         & Design defect & Triangle.isImpossible()  & 1,2,3 shouldn't return false     \\
@@ -18,9 +21,10 @@
 
 \begin{table}[!htb]
 \caption{Table of the defects found, part 2}
+\label{defectlist2}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline  Defect ID & Defect origin  & Defect repair time \\ \hline
-1.A       & ~																													 	 		& Very short time\\
+1.A       & invoked by a round of error in getPerimeter()							 	 		& Very short time\\
 1.B       & getPerimeter() must check if the triangle is possible 			 		& Short time         \\         
 2.A       & isEquilateral() must check if the triangle is possible       		& Short time         \\    
 2.B       & isEquilateral() must check if the triangle is possible       		& Short time         \\    
