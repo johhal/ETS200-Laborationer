@@ -11,5 +11,7 @@ According to "`Practical Software Testing"' there are five common methods:
 However, during the laboration only Equivalence class partitioning and Boundary value analysis where tested hence only they will be discussed further.
 
 During this laboration excersice a triangle class was tested but the fact that the input was three integer side lengths aggravated the testing. 
-When using Equivalence class partitioning it was tricky to create appropriate partitions of the input, for example:
+When using Equivalence class partitioning it was tricky to create appropriate partitions of the input, for example:\\
 The method isImpossible shall return true if it is impossible to build a triangle from the provided side lengths. 
+Assuming a triangle is valid if all sides are greater then 0 creates two partitions, i.e. sides are 0,0,0 and sides are 1,1,1. 
+However, since the input can be three arbitrary integers the cases when only one side is zero or less must be considered as an impossible triangle and this will create several more partitions.
