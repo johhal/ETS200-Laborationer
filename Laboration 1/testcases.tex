@@ -1,36 +1,39 @@
-\subsection{Conditions}
-Condition 1: The input must be a positive Integer.
+Five conditions were found to apply to the Triangle.java class and ten equivalence classes could then be derived from these as shown below:
+
+\noindent Condition 1: The input must be a positive Integer.
 \begin{itemize}
 	\item EC1. Input is a positive Integer, valid.
 	\item EC2. Input is a non-positive Integer, invalid.
 \end{itemize}
 
-Condition 2: The triangle must be equilateral.
+\noindent Condition 2: The triangle must be equilateral.
 \begin{itemize}
 	\item EC3. All sides are equal, valid. 
 	\item EC4. All sides are unequal,invalid. 
 \end{itemize}
 
-Condition 3: Two sides or more must be equal.  
+\noindent Condition 3: Two sides or more must be equal.  
 \begin{itemize}
 	\item EC5. Two sides or more are equal, valid. 
 	\item EC6. No sides are equal, invalid. 
 \end{itemize}
 
-Condition 4: One angle must be 90 degrees. 
+\noindent Condition 4: One angle must be 90 degrees. 
 \begin{itemize}
 	\item EC7. One angle is 90 degrees, valid. 
 	\item EC8. No angle is 90 degrees, invalid. 
 \end{itemize}
 
-Condition 5: All sides are unequal. 
+\noindent Condition 5: All sides are unequal. 
 \begin{itemize}
 	\item EC9. No sides are equal, valid. 
 	\item EC10. Two or more sides are equal, invalid. 
 \end{itemize}
 
+The table~\ref{classestable} shows all conditions and their associated equivalence classes. No Boundary value analysis was performed due to the reasons described in section~ref{methods}. 
 
-\begin{table}
+
+\begin{table}[!htb]
 	\centering
 	\label{classestable}
 	\caption{Selected equivalence classes}
@@ -46,7 +49,9 @@ Condition 5: All sides are unequal.
     \end{tabular}
 \end{table}
 
-\begin{table}
+\begin{table}[!htb]
+	\label{testinputtable}
+	\caption{Summary of test inputs using equivalence class partitioning}
     \begin{tabular}{|l|l|l|l|}
         \hline
         Test case identifier & Input values & Valid EC      & Invalid EC         \\ \hline
