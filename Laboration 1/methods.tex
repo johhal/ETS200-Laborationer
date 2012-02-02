@@ -11,7 +11,32 @@ According to "`Practical Software Testing"' there are five common methods:
 However, during the laboration only Equivalence class partitioning and Boundary value analysis where tested hence only they will be discussed further.
 
 During this laboration excersice a triangle class was tested but the fact that the input was three integer side lengths aggravated the testing. 
-When using Equivalence class partitioning it was tricky to create appropriate partitions of the input, for example:\\
+When using Equivalence class partitioning it was tricky to create appropriate partitions of the input, for example:
+
 The method isImpossible shall return true if it is impossible to build a triangle from the provided side lengths. 
 Assuming a triangle is valid if all sides are greater then 0 creates two partitions, i.e. sides are 0,0,0 and sides are 1,1,1. 
 However, since the input can be three arbitrary integers the cases when only one side is zero or less must be considered as an impossible triangle and this will create several more partitions.
+This made the Equivalence class partitioning method feel ungainly and it also didn't add any confident in that the test cases produced was adequate.
+
+
+And the Boundary value analysis had similiar limitations as Equivalence class partitioning when dealing with three arbitrary inputs. 
+Using the same example as above, the boundary value analysis would result in:
+\begin{itemize}
+	\item BLB = sides are 0,0,0
+	\item LB = sides are 1,1,1
+	\item ALB = sides are 2,2,2
+\end{itemize}
+There are no upper bounds in this example since a triangles sides can be very long. 
+Now, whilest LB is a valid triangle and BLB isn't, a triangle with sides 0,1,1 shouldn't be a valid triangle but does the test cases formed from without the boundary values ensure that the method vill return true?
+
+During this laboration excercise neither one of the methods used was succesfull in ensuring that the test cases were adequate.
+
+However, if the input would have been only one integer, or a string, with a clearly stated intervall both of these techniques would have been very valuable to reduce the amount of effort needed to ensure that the test cases indeed was good enough.
+
+
+Despite the fact that Equivalence class partitioning and Boundary value analysis was deemed inadequate for this excercise, they might still be better then the alternatives:
+\begin{itemize}
+\item Error guessing relies on the testers experience and since it was close to zero, this method is inapropriate.
+\item State transition testing could suffice to test the classify() method and the classification was the new state with the side lengths as input.
+\item Cause-effect graph could be used in the same manner as the State transition testing, with the sides as the causes and the classification as the effect. However, this method seems a bit to "`heavi-weight"' for this simple class.
+\end{itemize}
