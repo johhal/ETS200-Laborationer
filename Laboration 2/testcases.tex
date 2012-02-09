@@ -1,0 +1,93 @@
+%Five conditions were found to apply to the input of the Triangle.java class and ten equivalence classes could then be derived from these as shown below: \\\\
+%\noindent Condition 1: The input must be a positive Integer.
+%\begin{itemize}
+%	\item EC1. Input is a positive Integer, valid.
+%	\item EC2. Input is a non-positive Integer, invalid.
+%\end{itemize}
+%
+%\noindent Condition 2: The triangle must be equilateral.
+%\begin{itemize}
+%	\item EC3. All sides are equal, valid. 
+%	\item EC4. All sides are unequal, invalid. 
+%\end{itemize}
+%
+%\noindent Condition 3: Two sides or more must be equal.  
+%\begin{itemize}
+%	\item EC5. Two sides or more are equal, valid. 
+%	\item EC6. No sides are equal, invalid. 
+%\end{itemize}
+%
+%\noindent Condition 4: One angle must be 90 degrees. 
+%\begin{itemize}
+%	\item EC7. One angle is 90 degrees, valid. 
+%	\item EC8. No angle is 90 degrees, invalid. 
+%\end{itemize}
+%
+%\noindent Condition 5: All sides are unequal. 
+%\begin{itemize}
+%	\item EC9. No sides are equal, valid. 
+%	\item EC10. Two or more sides are equal, invalid. 
+%\end{itemize}
+
+%\noindent The Table~\ref{classestable} below shows all conditions and equivalence classes. As can be concluded from the table all conditions and their associated valid and invalid equivalence classes have been covered.
+
+
+%\begin{table}[!htb]
+%	\centering
+%	\caption{Selected equivalence classes}
+%	\label{classestable}	
+%    \begin{tabular}{|l|l|l|}
+%        \hline
+%        Condition  & Valid equivalence classes & Invalid equivalence classes \\ \hline
+%        1          & EC1                       & EC2                         \\ 
+%        2          & EC3                       & EC4                         \\ 
+%        3          & EC5                       & EC6                         \\ 
+%        4          & EC7                       & EC8                         \\ 
+%        5          & EC9                       & EC10                        \\
+%        \hline
+%    \end{tabular}
+%\end{table}
+
+%\newpage
+
+\noindent The Table~\ref{testinputtable} below shows a summary of the test cases and their respective input values, expected output values, coverage measures and levels of success. 
+
+\begin{table}[htb]
+	\centering
+	\caption{Summary of test cases and their input/output values, coverage measures and level of success}
+	\label{testinputtable}
+	
+    \begin{tabular}{|l|l|l|l|l|}
+        \hline
+        Test case identifier & Input values & Expected output values & Coverage measure & Pass \\ \hline
+        1                    & 5, 0, 2012   & "invalid Input Date"   & ~                & Yes  \\ 
+        2                    & 1, 31, 2012  & "2/1/2012"             & ~                & Yes  \\ 
+        3                    & 1, 30, 2012  & "1/31/2012"            & ~                & Yes  \\ 
+        4                    & 4, 1, 2012   & "4/2/2012"             & ~                & Yes  \\ 
+        5                    & 4, 30, 2012  & "5/1/2012"             & ~                & Yes  \\ 
+        6                    & 4, 31, 2012  & "Invalid Input Date"   & ~                & Yes  \\ 
+        7                    & 2, 1, 2012   & "2/2/2012"             & ~                & Yes  \\ 
+        8                    & 2, 28, 2012  & "2/29/2012"            & ~                & Yes  \\ 
+        9                    & 2, 28, 2011  & "3/1/2011"             & ~                & Yes  \\ 
+        10                   & 2, 29, 2012  & "3/1/2012"             & ~                & Yes  \\ 
+        11                   & 2, 29, 2011  & "Invalid Input Date"   & ~                & Yes  \\ 
+        12                   & 2, 30, 2012  & "Invalid Input Date"   & ~                & Yes  \\ 
+        13                   & 12, 12, 2012 & "12/13/2012"           & ~                & Yes  \\ 
+        14                   & 12, 32, 2012 & "invalid Input Date"   & ~                & No   \\ 
+        15                   & 12, 31, 2021 & "Invalid Next Year"    & ~                & No   \\ 
+        16                   & 12, 32, 2021 & "invalid Input Date"   & ~                & No   \\ 
+        17                   & 14, 12, 2012 & "invalid Input Date"   & ~                & Yes  \\ 
+        18                   & 11, 12, 2022 & "invalid Input Date"   & ~                & Yes  \\ 
+        19                   & 0, 12, 2002  & "invalid Input Date"   & ~                & Yes  \\ 
+        20                   & 5, 12, 1800  & "invalid Input Date"   & ~                & Yes  \\ 
+        21                   & 5, 12, 1800  & "3/1/2000"             & ~                & Yes  \\ 
+        22                   & 7,23,2012    & "7/24/2012"            & ~                & No   \\
+        \hline
+    \end{tabular}
+\end{table}
+
+
+
+
+
+
