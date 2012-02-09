@@ -1,28 +1,37 @@
-When performing the test cases described in Table~\ref{testinputtable} above the following defects presented in Table~\ref{defectlist1} and Table~\ref{defectlist2} were found:
+When performing the test cases described in Table~\ref{testinputtable} above the following three defects presented below were found.\\\\
 
-\begin{table}[!htb]
-\centering
-\caption{Table of the defects found, part 1}
-\label{defectlist1}
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline  Defect ID & Defect Type   & Location  & Symptoms\\ \hline
-1       & Design defect   & NextDate.run(int month, int day, int year)  & Calculates next date from 2012-12-32 to be 2013-01-01 instead of invalid date \\
-2       & Design defect   & NextDate.run(int month, int day, int year)  & Calculate next date from 2021-12-31 to be 2021-12-32 instead of invalid year  \\ 		
-3       & Code defect   & NextDate.isThirtyOneDayMonth( int month)  & Doesn't recognize July as a 31 day month, actually doesn't recognize July as a month at all  \\ 	\hline										           
-\end{tabular}
-\end{table}
 
-\newpage
+\noindent\textbf{Defect 1:}
+\begin{itemize}
+ \item Defect ID: 1
+ \item Defect Type: Design Defect
+ \item Location: NexDate.run(int month, int day, int year)
+ \item Symptoms: Calculate next date from 2012-12-32 to be 2013-01-01 instead of invalid date
+ \item Defect Origin: The system must check if the day number is less then 32 aswell
+ \item Defect Repair Time: Very short time
+ \item Found with Test Case: 14
+\end{itemize}
 
-\begin{table}
-\centering
-\caption{Table of the defects found, part 2}
-\label{defectlist2}
-\begin{tabular}{|l|l|l|l|l|l|}
-\hline  Defect ID & Defect origin  & Defect repair time & Test Case origin \\ \hline
-1       & The system must check if the day number is less then 32 aswell	& Very short time	& 14	\\
-2       & The system must know that December the 32 doesn't exist. 		& Short time     	& 15   	\\       
-3       & The system must know that July exist. 				& Short time      	& 22  	\\         \hline   
-\end{tabular}
-\end{table}
+\noindent \textbf{Defect 2:}
+\begin{itemize}
+ \item Defect ID: 2
+ \item Defect Type: Design Defect
+ \item Location: NexDate.run(int month, int day, int year)
+ \item Symptoms: Calculate next date from 2021-12-31 to be 2021-12-32 instead of invalid year
+ \item Defect Origin: The system must know that December the 32 doesn't exist
+ \item Defect Repair Time: Short time
+ \item Found with Test Case: 15
+\end{itemize}
+
+\noindent \textbf{Defect 3:}
+\begin{itemize}
+ \item Defect ID: 3
+ \item Defect Type: Code Defect
+ \item Location: NextDate.isThirtyOneDayMonth( int month)
+ \item Symptoms: Doesn't recognize July as a 31 day month, actually doesn't recognize July as a month at all
+ \item Defect Origin: The system must know that July exist
+ \item Defect Repair Time: Short time
+ \item Found with Test Case: 22 
+\end{itemize}
+
 
