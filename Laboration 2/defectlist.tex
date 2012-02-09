@@ -6,17 +6,9 @@ When performing the test cases described in Table~\ref{testinputtable} above the
 \label{defectlist1}
 \begin{tabular}{|l|l|l|l|l|l|}
 \hline  Defect ID & Defect Type   & Location  & Symptoms\\ \hline
-1.A       & Data defect   & Triangle.getPerimeter()  & Returns an int instead of double \\
-1.B       & Code defect   & Triangle.getPerimeter()  & Doesn't handle negative numbers  \\
-2.A       & Data defect   & Triangle.isEquilateral() & 0,0,0 shouldn't return true      \\
-2.B       & Data defect   & Triangle.isEquilateral() & -1,-1,-1 shouldn't return true   \\
-3         & Design defect & Triangle.isImpossible()  & 1,2,3 shouldn't return false     \\
-4         & Design defect & Triangle.isIsosceles()   & 0,1,1 shouldn't return true      \\
-5         & Design defect & Triangle.isRightAngled() & 0,1,1 shouldn't return true      \\
-6.A       & Design defect & Triangle.isScalene()     & 1,2,3 shouldn't return true      \\
-6.B       & Design defect & Triangle.isScalene()     & -3,-4,-5 shouldn't return true   \\
-7.A       & Code defect   & Triangle.classify()      & 2,4,4 should return isosceles    \\
-7.B       & Design defect & Triangle.classify()      & 1,2,3 should return impossible   \\         \hline     
+1       & Design defect   & NextDate.run(int month, int day, int year)  & Calculates next date from 2012-12-32 to be 2013-01-01 instead of invalid date \\
+2       & Design defect   & NextDate.run(int month, int day, int year)  & Calculate next date from 2021-12-31 to be 2021-12-32 instead of invalid year  \\ 		
+3       & Code defect   & NextDate.isThirtyOneDayMonth( int month)  & Doesn't recognize July as a 31 day month, actually doesn't recognize July as a month at all  \\ 	\hline										           
 \end{tabular}
 \end{table}
 
@@ -27,18 +19,10 @@ When performing the test cases described in Table~\ref{testinputtable} above the
 \caption{Table of the defects found, part 2}
 \label{defectlist2}
 \begin{tabular}{|l|l|l|l|l|l|}
-\hline  Defect ID & Defect origin  & Defect repair time \\ \hline
-1.A       & invoked by a round of error in getPerimeter()							 	 		& Very short time\\
-1.B       & getPerimeter() must check if the triangle is possible 			 		& Short time         \\         
-2.A       & isEquilateral() must check if the triangle is possible       		& Short time         \\    
-2.B       & isEquilateral() must check if the triangle is possible       		& Short time         \\    
-3         & isImpossible() must check for proportion                     		& Medium time        \\    
-4         & isIsosceles() must check if triangle is possible             		& Short time         \\    
-5         & isRightAngled() must check if triangle is possible           		& Short time         \\    
-6.A       & isScalene() must check if triangle is possible               		& Short time         \\    
-6.B       & isScalene() must check if triangle is possible               		& Short time         \\    
-7.A       & s1==s2 \& \& s2!=s3 isn't sufficient to classify not isosceles. & Short time         \\ 
-7.B       & See defect 3                                                 		& See defect 3       \\         \hline     
+\hline  Defect ID & Defect origin  & Defect repair time & Test Case origin \\ \hline
+1       & The system must check if the day number is less then 32 aswell	& Very short time	& 14	\\
+2       & The system must know that December the 32 doesn't exist. 		& Short time     	& 15   	\\       
+3       & The system must know that July exist. 				& Short time      	& 22  	\\         \hline   
 \end{tabular}
 \end{table}
 
