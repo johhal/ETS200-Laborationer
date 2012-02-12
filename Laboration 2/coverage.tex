@@ -1,3 +1,14 @@
 During the lab three different code coverage criteria were used to evaluate to which extent the code was tested; Statement coverage, Decision/branch coverage and Condition coverage. 
 
-Statement coverage refers to how many of the statements of a tested unit that are executed at least once. The degree of Decision/branch coverage means how many of the branches of an unit, i.e. true or false, that are executed at least once by the tests. Actually, the decision coverage only specifies how many of the decisions have been evaluated to both true and false, whereas the branch coverage shows if all branches, e.g. both if and else in an if-clause, have been executed. Finally, condition coverage 
+Statement coverage refers to how many of the statements of a tested unit that are executed at least once. 
+
+The degree of Decision/branch coverage means how many of the branches of an unit, i.e. true or false, that are executed at least once by the tests. Here, a complete boolean expression in an If-clause is considered one true-or-false statement. 
+
+Finally, Condition coverage tells to what extent each condition in the code have been evaluated to both true and false. 
+
+During the lab it turned out that the statement coverage criteria was insufficient as an metric of how well tested the code was. This, because statement coverage only evaluates one of the statements in an if-else-clause, and still reports 100 \% coverage. 
+
+The decision/branch coverage gave a good view of how many of the different paths through the code that had been executed and thus directly illustrated where tests were missing. 
+
+The condition coverage was less helpful in evaluating the code coverage, but showed us one else-if-clause that was unreachable. 
+
