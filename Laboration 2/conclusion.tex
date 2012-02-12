@@ -1,9 +1,5 @@
-After testing the Triangle.java class the following was concluded:
-\begin{itemize}
-	\item The class is poorly implemented with a lot of bugs.
-	\item Many errors would be fixed if the isImpossible() method was implemented correctly, i.e. checking for realistic proportions etcetera.
-	\item It would also be advisable to not only check that the input is an Integer but also that it is a positive Integer.
-\end{itemize}
+When using white-box testing the biggest challenge is to remain objective and not write tests to fit the code rather than test the code. Even though the task was to find tests that failed it felt like a success when a test passed, because usually a passing test means success. 
 
-\noindent Furthermore, it is very difficult to estimate Boundary values and Equivalence Class Partitions when the input is a set of numbers rather than a number interval. 
+\noindent At first it was difficult to grasp the meaning of the different code coverage criterias because they were all quite similar. The code coverage criterias provided a false sense of security at first since it was easy to deduce that 100\% in a coverage criteria meant that the testing was complete and that the code functionality were tested. In our quest to reach 100\% in code coverage we missed the purpose of testing, namely to find errors in the code. For example, even though we hade full code coverage we didn't notice until later that the month of July were entierly excluded from the program.
 
+\noindent Finally, to proberly test a system we would advise to use both white-box and black-box testing. This to make sure that all code is correct (white-box) and make sure that it contains all the functionality (black-box).
