@@ -1,0 +1,20 @@
+During the laboratory session two different groups of estimation methods were used; subjective- and capture-recapture.
+
+\subsection{Subjective methods}
+A subjective method means that inspector makes a qualified guess on the total defects in the object. 
+For example if the inspector during the course of one week found 25 errors in the Requirements Document he may conclude that there is probably not more than 30 defects in total in the Requirements Document.
+This technique can be effective if the inspector is experienced and the object to be inspected is rather trivial and small.
+\subsection{Captur-Recapture methods}
+These methods are a more scientifical aproach to find an estimation of the total amount of defects in the inspected object.
+The basic idea is that you let two or more inspectors inspect an object individually during a set amount of time and note the defects they find.
+Then they compile their results and discuss them to rule out any false positives and create an \textit{InspectionData} matrix.
+
+\subsubsection{M0-ML Maximum likelihood}
+By using Maximum likelihood the total amount of defects in an inspected object is calculated. 
+In this method all defects have equal detection probability and all inspectors have equal detection abilities.
+\subsubsection{Mt-ML Maximum likelihood}
+By using Maximum likelihood the total amount of defect in an inspected object is calculated. 
+In this method all faults have equal detection probability but inspectors may have different detection abilities.
+\subsubsection{Mh-JK Jackknife}
+This method estimates the total amount of defects in an inspected object as well as the confidence interval of the fault content. 
+In this method defects may have different detection probability but all inspectors have equal detection abilities. 
