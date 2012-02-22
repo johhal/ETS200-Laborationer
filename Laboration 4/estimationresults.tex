@@ -1,28 +1,37 @@
-Below follows the results of the defect estimation as well as the techniques used.
+Below follows the results of the failure estimation as well as the estimation method used.
 
-\subsection{Subjective method}
-The subjective estimation was only performed by two of the inspectors.
-The result of the subjective estimation was as follows:
-\begin{itemize}
-\item Inspector 1 found 12 defects over the course of two hours and estimated that there was about 25 defects in total, due to his inexperience and probably low detection ability.
-\item Inspector 2 found 14 defects over the course of two hours and estimated that there was about 30 defects in total, due to his inexperience and probably low detection ability.
-\end{itemize}
+\subsection{TROPICO R-1500}
+TROPICO R-1500 is a Brazilian Electronic Switching System with 1500 subscribers and a file, godata1.txt containing the failure count of said system, will be analyzed. A compliation of the results are found in Table~\ref{goelokumototable} below.
+\subsubsection*{Subjective Estimation} 
+First the cumulative sum of the faults found in week 1 to week 50 were plotted, see Figure~\ref{cumulativegodata1} below, to see if a failure over time trend could be found.
+The inspectors identified an exponentially declining trend and estimated the two variables $N_{future}$ and $N_{tot}$ to be 500 and 600 faults respectively, see Table~\ref{goelokumototable}. 
+\subsubsection*{Goel-Okumoto method}
+To use the Goel-Okumoto method, described in section~\ref{methods}, a program, go.m, were used to calculate the variables $a=547.5$ and $b=0.0242$.
+When estimating the $N_{future}$ variable the found values of $a$ and $b$ were inserted in the Goele-Okumoto formula and $t$ were increased to 75, since $N_{future}$ is the cumulative sum of the errors found in additionally 50\% time. 
+$N_{tot} = a$ since it is the sum of all errors found in an infinite amounut of time.
+The estimation of $N_{future}$ and $N_{tot}$ was 458.1 and 547.5 respecitvely, see Table~\ref{goelokumototable}.
+\subsubsection*{Real Data}
+To find the accuracy of the subjective estimation and the Goel-Okumoto method the real values of $N_{future}$ and $N_{tot}$ were found by using a file, godata2.txt, containing the failure count of 31 more weeks. 
+The real value of $N_{future}$ is the sum of all errors up to weak 75, which gives $N_{future}=459$, but $N_{tot}$ cannot be verified since there is no, nor will it ever be, a file containing the errors found until infinity. However, the last value of godata2.txt is 461 and is found at week 81, compared to 468 at week 81 in the Goel-Okumoto estimation.
 
-\subsection{Capture-recapture method with two inspectors}
-During this estimation the \textit{InspectionData} matrix $M_{1}$ described in section~\ref{inspection} was used.
-\subsubsection{M0-ML Maximum likelihood}
+\begin{figure}[htb!]
+\begin{center}
+	\includegraphics[width=0.5\textwidth]{cumsumgodata1plot.png}
+\caption{The cumulative sum of failures found in TROPICO R-1500 in 50 weeks.}
+\end{center}
+\label{cumulativegodata1}
+\end{figure}
 
-To make a point estimation of the total amount of defects in the Requirements Document the MatLab file m0mle.m was used with the $M_{1}$ matrix as input. The total amount of defects was estimated to 16.
-\subsubsection{Mt-ML Maximum likelihood}
-To make a point estimation of the total amount of defects in the Requirements Document the MatLab file mtmle.m was used with the $M_{1}$ matrix as input. The total amount of defects was estimated to 16.
-\subsubsection{Mh-JK Jackknife}
-To make a point estimation of the total amount of defects in the Requirements Document as well as the confidence interval of the fault content the MatLab file mtmle.m was used with the $M_{1}$ matrix as input. The total amount of defects was estimated to 18, the standard deviation to 2.12 and the confidence interval was 17-27.
-
-\subsection{Capture-recapture method with four inspectors}
-During this estimation the \textit{InspectionData} matrix $M_{2}$ described in section~\ref{inspection} was used.
-\subsubsection{M0-ML Maximum likelihood}
-To make a point estimation of the total amount of defects in the Requirements Document the MatLab file m0mle.m was used with the $M_{2}$ matrix as input. The total amount of defects was estimated to 25.
-\subsubsection{Mt-ML Maximum likelihood}
-To make a point estimation of the total amount of defects in the Requirements Document the MatLab file mtmle.m was used with the $M_{2}$ matrix as input. The total amount of defects was estimated to 23.
-\subsubsection{Mh-JK Jackknife}
-To make a point estimation of the total amount of defects in the Requirements Document as well as the confidence interval of the fault content the MatLab file mtmle.m was used with the $M_{2}$ matrix as input. The total amount of defects was estimated to 24, the standard deviation to 3.11 and the confidence interval was 22-36.
+\begin{table}[!htb]
+	\centering
+	\caption{The test cases and their respective input, output and results}
+	\label{goelokumototable}	
+    \begin{tabular}{|l|l|l|}
+        \hline
+        ~ & $N_{future}$ & $N_{tot}$ \\ \hline
+        Subjective Estimation            & 500   & 600 		\\ 
+        GO estimation                    & 458.1 & 547.5	\\ 
+        Actual values                    & 459 	 & 461		\\ 
+        \hline
+    \end{tabular}
+\end{table}
