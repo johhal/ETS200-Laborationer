@@ -1,19 +1,35 @@
-During the laboratory session two different groups of estimation methods were used; subjective and capture-recapture methods. 
+During the laboratory session two types of estimation methods were used; one \textit{failure count reliability model} called \textit{The Goel-Okumoto model }and one \textit{time between failure model} called \textit{The Jelinski-Moranda model}. 
 
-\subsection{Subjective methods}
-A subjective method means that an inspector makes a qualified guess on the total defects in the object. For example, if the inspector finds 25 errors in the Requirements Document during the course of one week, he may conclude that there is probably not more than 30 defects in total in the Requirements Document. This technique can be effective if the inspector is experienced and the object to be inspected is rather small and trivial.
+\subsection{The Goel-Okumoto model}
+Non-homogeneous Poisson process models, NHPP, have turned out to be fairly accurate in describing hardware reliability problems. 
 
-\subsection{Capture-recapture methods}
-The Capture-recapture methods take a more scientific approach to find an estimation of the total amount of defects in the inspected object. The basic idea is to let two or more inspectors inspect an object individually during a fixed amount of time and note the defects they find. Then, the inspectors compile their results and discuss them to rule out any false positives and create an \textit{InspectionData} matrix.
+The Goel-Okumoto model assumes that the failure process i modeled by an NHPP model under the following conditions:
+\begin{itemize}
+\item	The cumulative number of faults detected at time t follows a Poisson distribution.
+\item	All faults are independent and have the same chance of being detected.
+\item 	All detected faults are removed immediately and no new faults are introduced.
+\end{itemize}
 
-\subsubsection{M0-ML Maximum likelihood}
-By using the M0 model together with the Maximum likelihood estimator the total amount of defects in an inspected object can be calculated. 
-According to the MO model all faults have equal detection probability and all inspectors have equal detection ability.
+\noindent The model defines the expected number of faults found at time t by the mean value function:
 
-\subsubsection{Mt-ML Maximum likelihood}
-By using the Mt model together with the Maximum likelihood estimator the total amount of defects in an inspected object can be calculated. 
-According to the Mt model all faults have equal detection probability but the inspectors may have different detection abilities.
+$$m(t) = a(1 - e^{-bt})$$
 
-\subsubsection{Mh-JK Jack-knife}
-By using the Mh model together with the Jack-knife estimator the total amount of defects in an inspected object, the standard defect deviation as well as the confidence interval of the fault content can be calculated. 
-According to the Mh model all faults may have different detection probabilities but all inspectors have equal detection ability.  
+\noindent where $a=$ total number of faults in the program and $b=$ constant of proportionality. The shape of this function is shown in Figure~\ref{goelokumoto} below.
+
+\begin{figure}[htb!]
+\centering
+	\includegraphics[width=0.5\textwidth]{mshape.png}
+\caption{The shape of the Goel-Okumoto  }
+\label{goelokumoto}
+\end{figure}
+
+By inserting the the value of $m(t_{i})$ for all $i$ into the likelihood function for the general NHPP model, and then maximising the likelihood function, the model parameters $a$ and $b$ can be estimated. 
+
+\subsection{The Jelinski-Moranda model}
+Time between failure models aim to model times between occurred failures. The Jelinski-Moranda model assumes that the times between failures are independently exponentially distributed according to 
+
+$$\lambda_{i}=\phi(N-(i-1))$$
+
+\noindent where $\lambda_{i}$ is assumed to be a function of the remaining number of failures, $N$ is the initial number of faults in the program and $\phi$ is a constant. 
+
+The Jelinski-Moranda model describes a simplification of the real behavior where $N$ and $\phi$ are estimated from the measured data with, e.g., maximum likelihood estimation. 
