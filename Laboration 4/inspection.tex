@@ -1,0 +1,85 @@
+Both inspector 1 and 2 spent two hours looking for errors in the Requirements Document.
+Inspector 1 found 12 defects whilst Inspector 2 found 14 defects to a total of 16 unique defects.
+A compilation of the defects found is shown in Table~\ref{defectlist} below.
+
+\begin{table}[!htb]
+\centering
+\caption{Table of the defects found in the Requirements Documnet}
+\label{defectlist}
+\begin{tabular}{|l|l|l|l|l|l|}
+\hline  Defect ID & Defect Location   & Found by inspector 1  & Found by inspector 2\\ \hline
+1       & UC2.1 Task 2  & Yes  & No \\
+2       & UC2.2 Task 3   & Yes  & Yes  \\
+3       & UC2.2 Task 1   & Yes & Yes      \\
+4       & UC2.2 Task 3   & No & Yes   \\
+5         & UC2.3 Task 1 & Yes  & Yes     \\
+6         & UC2.4 Task 2 & No   & Yes      \\
+7         & UC2.4 Task 3 & Yes & Yes      \\
+8       & UC2.4 Task 5 & Yes & Yes      \\
+9       & UC2.4 Task 4b & No     & Yes   \\
+10       & UC2.6 Task 4   & Yes      & Yes    \\
+11       & UC2.6 Task 2b & Yes      & No   \\   
+12       & UC2.6 Task 6b   & Yes      & Yes    \\
+13       & UC2.8 Task 1   & Yes      & Yes    \\
+14       & UC2.9 Task 1   & No      & Yes    \\     
+15       & UC2.10 Task 2   & Yes      & Yes    \\
+16       & UC2.10 Task 5   & Yes      & Yes    \\  \hline     
+\end{tabular}
+\end{table}
+
+\noindent By using the information in Table~\ref{defectlist} above an \textit{InspectionData} matrix $M_{1}$ was created:
+
+
+
+\[
+M_{1} =
+\begin{array}{cc}
+ 1 & 0 \\
+ 1 & 1 \\
+ 1 & 1 \\
+ 0 & 1 \\
+ 1 & 1 \\
+ 0 & 1 \\
+ 1 & 1 \\
+ 1 & 1 \\
+ 0 & 1 \\
+ 1 & 1 \\
+ 1 & 0 \\
+ 1 & 1 \\
+ 1 & 1 \\
+ 0 & 1 \\
+ 1 & 1 \\
+ 1 & 1 \\
+\end{array}
+\]
+
+\noindent When compiling our results from Table~\ref{defectlist} with the results of another group, consisting of two inspectors, the following \textit{InspectionData} matrix $M_{2}$ was created:
+
+\[
+M_{2} =
+\begin{array}{cccc}
+ 1 & 0 & 0 & 0 \\
+ 1 & 1 & 0 & 0 \\
+ 0 & 0 & 1 & 1 \\
+ 0 & 0 & 1 & 1 \\
+ 1 & 1 & 0 & 0 \\
+ 0 & 1 & 0 & 0 \\
+ 1 & 1 & 0 & 0 \\
+ 0 & 1 & 1 & 1 \\
+ 0 & 0 & 1 & 0 \\
+ 0 & 1 & 1 & 0 \\
+ 1 & 1 & 0 & 0 \\
+ 1 & 1 & 0 & 0 \\
+ 0 & 0 & 1 & 0 \\
+ 1 & 1 & 0 & 0 \\
+ 1 & 0 & 0 & 0 \\
+ 1 & 1 & 0 & 0 \\
+ 0 & 0 & 1 & 0 \\
+ 1 & 1 & 0 & 0 \\
+ 0 & 1 & 0 & 0 \\
+ 1 & 1 & 0 & 0 \\
+ 1 & 1 & 0 & 0 \\
+\end{array}
+\]
+
+\noindent Matrix $M_{1}$ and $M_{2}$ were used to calculate the estimated total number of defects using the capture-recapture methods described in section~\ref{methods} above. 
