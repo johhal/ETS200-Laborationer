@@ -1,32 +1,32 @@
-Below follows the results of the failure estimation as well as the estimation method used. 
+Below follows the results of the failure estimation as well as the estimation methods used. 
 The following two variables will be estimated:
 \begin{itemize}
- \item $N_{future}$ - Is the amount of errors in the future, i.e. in additionally 50\% time.
+ \item $N_{future}$ - Is the amount of errors in the future, i.e., in additionally 50\% time.
  \item $N_{tot}$ - Is the total amount of errors in the analysed system.
 \end{itemize}
 
 \subsection{TROPICO R-1500}
-TROPICO R-1500 is a Brazilian Electronic Switching System with 1500 subscribers and in the file, \code{godata1.txt}, the failure count of said system is stored and will be analysed. A compilation of the results are found in Table~\ref{goelokumototable} in appendix.
+TROPICO R-1500 is a Brazilian Electronic Switching System with 1500 subscribers and in the file, \code{godata1.txt}, the failure count of said system is stored and will be analysed. A compilation of the results are found in Table~\ref{goelokumototable} in Appendix.
 \subsubsection*{Subjective Estimation} 
-First the cumulative sum of the faults found in week 1 to week 50 were plotted, see Figure~\ref{cumulativegodata1} in appendix, to see if a failure over time trend could be found.
-The inspectors identified an exponentially declining trend and estimated the two variables $N_{future}$ and $N_{tot}$ to be 500 and 600 faults respectively, see Table~\ref{goelokumototable}. 
+First, the cumulative sum of the faults found in week 1 to week 50 were plotted, see Figure~\ref{cumulativegodata1} in Appendix, to see if a failure over time trend could be found.
+The inspectors identified an exponentially declining trend and estimated the two variables $N_{future}$ and $N_{tot}$ to be 500 and 600 faults respectively, see Table~\ref{goelokumototable} in Appendix. 
 \subsubsection*{Goel-Okumoto method}
-To use the Goel-Okumoto method, described in section~\ref{methods}, a program, \code{go.m}, were used to calculate the variables $a=547.5$ and $b=0.0242$.
+To use the Goel-Okumoto method, described in section~\ref{methods}, a program, \code{go.m}, was used to calculate the variables $a=547.5$ and $b=0.0242$.
 When estimating the $N_{future}$ variable the found values of $a$ and $b$ were inserted in the Goele-Okumoto formula and $t$ were increased to 75, since $N_{future}$ is the cumulative sum of the errors found in additionally 50\% time. 
-$N_{tot} = a$ since it is the sum of all errors found in an infinite amount of time.
-The estimation of $N_{future}$ and $N_{tot}$ was 458.1 and 547.5 respectively, see Table~\ref{goelokumototable} in appendix.
+Since $N_{tot}$ is the sum of all errors found in an infinite amount of time, it was estimated to $N_{tot} = a$.
+The estimation of $N_{future}$ and $N_{tot}$ was 458.1 and 547.5 respectively, see Table~\ref{goelokumototable} in Appendix.
 \subsubsection*{Real Data}
 
 \label{realdatago}
 To find the accuracy of the subjective estimation and the Goel-Okumoto method the real values of $N_{future}$ and $N_{tot}$ were found by analysing a file, \code{godata2.txt}, containing the failure count of 31 more weeks. 
-The real value of $N_{future}$ is the sum of all errors up to weak 75, which gives $N_{future}=459$, which is very close to the estimated value of 458.1. $N_{tot}$ on the other hand cannot be verified since there is no, nor will it ever be, a file containing the errors found until infinity. However, the last value of \code{godata2.txt} is 461 and is found at week 81, compared to 468 at week 81 in the Goel-Okumoto estimation. Since this is within 1.5\% of the estimation, it will be assumed that Goel-Okumoto estimates the $N_{tot}$ good enough.
+The real value of $N_{future}$ is the sum of all errors up to weak 75, which gives $N_{future}=459$, which is very close to the estimated value of 458.1. $N_{tot}$ on the other hand cannot be verified since there is no, nor will ever be, a file containing the errors found until infinity. However, the last value of \code{godata2.txt} is 461 and is found at week 81, compared to 468 at week 81 in the Goel-Okumoto estimation. Since this is within 1.5\% of the estimation, it will be assumed that Goel-Okumoto estimates the $N_{tot}$ good enough.
 
 \subsection{Reliability Jelinski-Moranda}
 In this exercise a file, \code{jmdata1.txt}, containing the failures found in a system as well as the time between them will be used.
-A compilation of the results are found in Table~\ref{jelinskimorandatable}.
+A compilation of the results are found in Table~\ref{jelinskimorandatable} in Appendix. 
 
 \subsubsection*{Subjective Estimation} 
-First the cumulative sum of the time between failures and the number of failures were plotted, see Figure~\ref{cumulativejmdata1} in appendix. Here as well the inspectors identified an exponentially declining trend and subjectively estimated $N_{future}$ and $N_{tot}$ to be 230 and 500 respectively, see Table~\ref{jelinskimorandatable} in appendix.
+First the cumulative sum of the time between failures and the number of failures were plotted, see Figure~\ref{cumulativejmdata1} in Appendix. Here as well the inspectors identified an exponentially declining trend and subjectively estimated $N_{future}$ and $N_{tot}$ to be 230 and 500 respectively, see Table~\ref{jelinskimorandatable} in Appendix.
 
 \subsubsection*{Jelinski-Moranda Estimation}
 \label{jmestimation}
@@ -35,4 +35,4 @@ $N_{tot}$ on the other hand is the fault when the JM-method equals zero, because
 
 \subsubsection*{Real Data}
 \label{realdatajm}
-To find the accuracy of the subjective estimation and the Jelinski-Moranda method the real values of $N_{future}$ and $N_{tot}$ were found by analysing a file, \code{jmdata2.txt}, containing an additional 57 failures as well as the time between them. Since the end time in \code{jmdata1.txt} was around 9000 time units the $N_{future}$ is the number of faults found after 13500 units of time. By plotting the cumulative sum of the time between errors in \code{jmdata2.txt} it was found that the real value of $N_{future}=200$. The real data value of $N_{tot}$ is $N_{tot}=207$ and occurs at time 16656 and with an failure intensity $\lambda=0.0025$. Even tough this value is a bit of from the estimated $N_{tot}$ it is assumed to be realistic since $\lambda=0.0025$ at this point and Figure~\ref{cumulativejmdata2} in appendix shows that the amount of failures has severely stagnated.
+To find the accuracy of the subjective estimation and the Jelinski-Moranda method the real values of $N_{future}$ and $N_{tot}$ were found by analysing a file, \code{jmdata2.txt}, containing an additional 57 failures as well as the time between them. Since the end time in \code{jmdata1.txt} was around 9000 time units the $N_{future}$ is the number of faults found after 13500 units of time. By plotting the cumulative sum of the time between errors in \code{jmdata2.txt} it was found that the real value of $N_{future}=200$. The real data value of $N_{tot}$ is $N_{tot}=207$ and occurs at time 16656 and with a failure intensity $\lambda=0.0025$. Even tough this value is a bit of from the estimated $N_{tot}$ it is assumed to be realistic since $\lambda=0.0025$ at this point and Figure~\ref{cumulativejmdata2} in Appendix shows that the amount of failures has drastically stagnated.
