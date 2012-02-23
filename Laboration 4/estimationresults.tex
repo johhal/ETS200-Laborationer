@@ -18,23 +18,20 @@ The estimation of $N_{future}$ and $N_{tot}$ was 458.1 and 547.5 respectively, s
 \subsubsection*{Real Data}
 
 \label{realdatago}
-To find the accuracy of the subjective estimation and the Goel-Okumoto method the real values of $N_{future}$ and $N_{tot}$ were found by using a file, \code{godata2.txt}, containing the failure count of 31 more weeks. 
+To find the accuracy of the subjective estimation and the Goel-Okumoto method the real values of $N_{future}$ and $N_{tot}$ were found by analysing a file, \code{godata2.txt}, containing the failure count of 31 more weeks. 
 The real value of $N_{future}$ is the sum of all errors up to weak 75, which gives $N_{future}=459$, which is very close to the estimated value of 458.1. $N_{tot}$ on the other hand cannot be verified since there is no, nor will it ever be, a file containing the errors found until infinity. However, the last value of \code{godata2.txt} is 461 and is found at week 81, compared to 468 at week 81 in the Goel-Okumoto estimation. Since this is within 1.5\% of the estimation, it will be assumed that Goel-Okumoto estimates the $N_{tot}$ good enough.
 
-
-
-
 \subsection{Reliability Jelinski-Moranda}
-In this excersice a file, \code{jmdata1.txt}, containing the failures found in a system as well as the time between them will be used.
+In this exercise a file, \code{jmdata1.txt}, containing the failures found in a system as well as the time between them will be used.
 A compilation of the results are found in Table~\ref{jelinskimorandatable}.
 
 \subsubsection*{Subjective Estimation} 
-First te cumulative sum of the time between failures and the number of failures were plotted, see Figure~\ref{cumulativejmdata1} in appendix. Here as well the inspectors identified an exponentially declining trend and estimated $N_{future}$ and $N_{tot}$ to be 230 and 500 respectively, see Table~\ref{jelinskimorandatable} in appendix.
+First the cumulative sum of the time between failures and the number of failures were plotted, see Figure~\ref{cumulativejmdata1} in appendix. Here as well the inspectors identified an exponentially declining trend and subjectively estimated $N_{future}$ and $N_{tot}$ to be 230 and 500 respectively, see Table~\ref{jelinskimorandatable} in appendix.
 
 \subsubsection*{Jelinski-Moranda Estimation}
 
-To use the Jalinski-Moranda method, described in section~\ref{methods}, a program, \code{jm.m}, were used to calculate the variables $N=226.5$ and $\phi=1.18\times10^{-4}$. Since Jelinski-Moranda estimates the intensity of failures $N_{future}$ cannot be estimated using this method.
-$N_{tot}$ on the other hand is the fault when the JM method equals zero, because if the intensity of failures equals zero no new errors will occur, which gives $N_{tot}=226.5$.
+To use the Jelinski-Moranda method, described in section~\ref{methods}, a program, \code{jm.m}, were used to calculate the variables $N=226.5$ and $\phi=1.18\times10^{-4}$. Since Jelinski-Moranda estimates the intensity of failures $N_{future}$ cannot be estimated using this method.
+$N_{tot}$ on the other hand is the fault when the JM-method equals zero, because if the intensity of failures equals zero no new errors will occur, which gives $N_{tot}=226.5$.
 
 \subsubsection*{Real Data}
 \label{realdatajm}
